@@ -10,3 +10,9 @@ def home(request):
     }
 
     return render(request, "lyra/home.html", context)
+
+def show_data(request):
+    pass
+
+def generate_data(start, end):
+    pass
