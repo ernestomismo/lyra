@@ -5,9 +5,13 @@
 {% block content %}
 
 
-    <h1>hola hijo puta</h1>
+    <h1>Proyectos recientes</h1>
     <br/>
-    {{var_de_mierda}}
+    {% if projects %}
+        {% for project in projects %}
+            {{ project }}<br\>
+        {% endfor %}
+    {% endif %}
 
 {% endblock %}
 

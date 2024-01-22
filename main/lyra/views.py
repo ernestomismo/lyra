@@ -1,9 +1,12 @@
 from django.shortcuts import render
+from .models import Project
 
 def home(request):
-    var_de_mierda = "Vete con tu puta madre cabrón!!!."
+
+    projects = Project.objects.all()
+
     context = {
-        "var_de_mierda": var_de_mierda
+        "projects": projects,
     }
 
     return render(request, "lyra/home.html", context)
