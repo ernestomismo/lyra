@@ -1,0 +1,33 @@
+{% extends "lyra\mlbase.html" %}
+
+<div class="col-md-6 offset-md-3">
+
+{% block content %}
+
+
+    <h1>Generate random data:</h1>
+    <br/>
+    <div class="col-md-7 col-lg-8">
+    <form action="{% url 'lyra:gendata' %}" method="post">
+        {% csrf_token %}
+        <div class="input-group">
+            <span class="input-group-text">Start</span>
+            <input type="text" class="form-control" aria-label="Init number"
+            name="start" id="start">
+            <span class="input-group-text">.00</span>&nbsp;&nbsp;
+       
+            <span class="input-group-text">End</span>
+            <input type="text" class="form-control" aria-label="End number"
+            name="end" id="end">
+            <span class="input-group-text">.00</span>&nbsp;&nbsp;
+        
+            <span class="input-group-text">Step</span>
+            <input type="text" class="form-control" aria-label="Step number"
+            name="step" id="step">
+            <span class="input-group-text">.00</span>
+         </div>
+    </form>
+    </div>
+{% endblock %}
+
+</div>
