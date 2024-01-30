@@ -8,7 +8,7 @@
     <h1>Generate random data:</h1>
     <br/>
     <div class="col-md-7 col-lg-8">
-    <form action="{% url 'lyra:gendata' %}" method="post">
+    <form action="{% url 'lyra:showdata' %}" method="post">
         {% csrf_token %}
         <div class="input-group">
             <span class="input-group-text">Start</span>
@@ -24,10 +24,17 @@
             <span class="input-group-text">Step</span>
             <input type="text" class="form-control" aria-label="Step number"
             name="step" id="step">
-            <span class="input-group-text">.00</span>
+            <span class="input-group-text">.00</span>&nbsp;&nbsp;
+
+            <input class="btn btn-primary" type="submit" value="Generate">
          </div>
     </form>
     </div>
+    {% if data %}
+        {% for x in data %}
+            {{x}} <br/>
+        {% endfor %}
+    {% endif %}
 {% endblock %}
 
 </div>

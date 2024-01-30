@@ -8,5 +8,5 @@ urlpatterns = [
     path("", views.home, name="home"),
     path("data", views.mlproject, name="data"),
     path("gendata", dataviews.gen_data_view, name="gendata"),
-    #path("showdata", dataviews.show_data, name="gendata")
+    path("showdata", dataviews.show_data, name="showdata")
 ]

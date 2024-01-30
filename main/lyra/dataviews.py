@@ -5,14 +5,15 @@ def gen_data_view(request):
     return render(request, "lyra/show_data.html", {})
 
 def show_data(request):
-    #tensor = generate_data(0, 0)
-    return render(request, "lyra/data.html", {})
+    start = int(request.POST["start"])
+    end = int(request.POST["end"])
+    tensor = generate_data(end)
+    context = {"data": tensor,}
+    return render(request, "lyra/show_data.html", context)
 
-def generate_data(start, end):
+def generate_data(end):
     # Create data
-    start = 0
-    end = 1
-    step = 0.02
-    X = torch.arange(start, end, step).unsqueeze(dim=1)
 
-    return X
+    X = torch.arange(end)
+    
+    return X.tolist
